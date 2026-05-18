@@ -60,7 +60,7 @@ Aplikasi ini dirancang dengan arsitektur SPA (*Single Page-like behavior* per mo
 Karena proyek ini sepenuhnya berjalan di sisi klien (client-side) tanpa memerlukan server backend, Anda dapat menjalankannya dengan sangat mudah:
 1. Kloning Repositori ini
 ```
-git clone [https://github.com/USERNAME_KAMU/NAMA_REPOSITORI.git](https://github.com/USERNAME_KAMU/NAMA_REPOSITORI.git)
+git clone https://github.com/achraflyy48/Sistem-Pemesanan-dan-Pemantauan-Bahan-Ajar-Universitas-Terbuka.git
 ```
 2. Buka Proyek
 * Masuk ke dalam direktori hasil kloning.

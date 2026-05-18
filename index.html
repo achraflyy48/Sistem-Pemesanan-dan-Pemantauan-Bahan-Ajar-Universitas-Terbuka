@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UT Bahan Ajar — Beranda</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar">
+      <div class="navbar-brand">
+        <img
+          src="assets/Logo UT (1).png"
+          alt="Logo Universitas Terbuka"
+          class="brand-icon"
+        />
+        UT Bahan Ajar
+      </div>
+
+      <!-- Hamburger (mobile) -->
+      <button class="navbar-toggle" type="button" aria-label="Buka menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+      <ul class="navbar-links" id="navbarLinks">
+        <li><a href="index.html" class="active" data-nav-link>Beranda</a></li>
+        <li><a href="stok.html" data-nav-link>Stok</a></li>
+        <li><a href="tracking.html" data-nav-link>Tracking DO</a></li>
+      </ul>
+    </nav>
+
+    <script>
+      (function () {
+        const nav = document.querySelector('.navbar');
+        const toggle = nav && nav.querySelector('.navbar-toggle');
+        const links = nav && nav.querySelector('#navbarLinks');
+        if (!toggle || !links) return;
+
+        const close = () => {
+          links.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+        };
+
+        const open = () => {
+          links.classList.add('open');
+          toggle.setAttribute('aria-expanded', 'true');
+        };
+
+        toggle.addEventListener('click', () => {
+          const isOpen = links.classList.contains('open');
+          isOpen ? close() : open();
+        });
+
+        // Tutup menu saat pilih menu
+        nav.querySelectorAll('[data-nav-link]').forEach((a) => {
+          a.addEventListener('click', close);
+        });
+
+        // Tutup jika resize ke desktop
+        window.addEventListener('resize', () => {
+          if (window.innerWidth > 768) close();
+        });
+
+        close();
+      })();
+    </script>
+
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero">
+      <h1>📦 Sistem Pemesanan Bahan Ajar</h1>
+      <p>
+        Universitas Terbuka  Kelola stok bahan ajar dan pantau pengiriman
+        Delivery Order dengan mudah.
+      </p>
+
+      <div class="hero-cards">
+        <a href="stok.html" class="hero-card">
+          <div class="icon">🗃️</div>
+          <div class="label">Stok Bahan Ajar</div>
+          <div class="desc">
+            Lihat, tambah, dan edit stok bahan ajar per UT-Daerah
+          </div>
+        </a>
+        <a href="tracking.html" class="hero-card">
+          <div class="icon">🚚</div>
+          <div class="label">Tracking DO</div>
+          <div class="desc">
+            Buat DO baru dan pantau status pengiriman bahan ajar
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- ===== KONTEN INFO ===== -->
+    <div class="container">
+      <div
+        style="
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+          gap: 16px;
+        "
+      >
+        <div class="card">
+          <div class="card-title">ℹ️ Tentang Aplikasi</div>
+          <p>
+            Aplikasi ini dibuat sebagai tugas praktik matakuliah
+            <strong>Pemrograman Berbasis Website</strong> menggunakan
+            <strong>Vue.js</strong>.
+          </p>
+          <br />
+          <p>
+            Data yang digunakan adalah data dummy (tidak menggunakan database),
+            cocok untuk simulasi dan pembelajaran.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-title">✅ Fitur Utama</div>
+          <ul
+            style="
+              padding-left: 18px;
+              display: flex;
+              flex-direction: column;
+              gap: 6px;
+            "
+          >
+            <li>Tampilkan & kelola daftar stok bahan ajar</li>
+            <li>Filter & sort data stok</li>
+            <li>Tambah dan edit data stok</li>
+            <li>Buat Delivery Order baru</li>
+            <li>Tracking status pengiriman DO</li>
+            <li>Validasi form input</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title">🛠️ Teknologi</div>
+          <ul
+            style="
+              padding-left: 18px;
+              display: flex;
+              flex-direction: column;
+              gap: 6px;
+            "
+          >
+            <li>Vue.js 2 (via CDN)</li>
+            <li>HTML5 + CSS3</li>
+            <li>JavaScript (ES6)</li>
+            <li>Google Fonts</li>
+            <li>Tanpa framework tambahan</li>
+            <li>Tanpa database / API eksternal</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
